@@ -7,9 +7,9 @@ namespace RecipeBox.Models
   {
     public DbSet<Tag> Tags { get; set; }
     public DbSet<Recipe> Recipes { get; set; }
-    // public DbSet<TagRecipe> TagRecipe { get; set; }
+    public DbSet<TagRecipe> TagRecipe { get; set; }
 
-    public ToDoListContext(DbContextOptions options) : base(options) { }
+    public RecipeBoxContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
