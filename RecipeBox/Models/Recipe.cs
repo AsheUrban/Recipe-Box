@@ -13,7 +13,7 @@ namespace RecipeBox.Models
         public string Name { get; set; }
         public int Rating { get; set; }
         public string Instruction { get; set; }
-        public string Ingredient { get; set; }
+        // public string Ingredient { get; set; }
         public virtual ApplicationUser User { get; set; }
         public virtual ICollection<TagRecipe> JoinEntities { get;}
     }
