@@ -11,8 +11,8 @@
     @Html.Label("Recipe Name: ")
     @Html.TextBoxFor(model => model.Name)
 
-    @Html.LabelFor(model => model.Ingredient)
-    @Html.TextBoxFor(model => model.Ingredient)
+    @* @Html.LabelFor(model => model.Ingredient)
+    @Html.TextBoxFor(model => model.Ingredient) *@
 
     @Html.LabelFor(model => model.Instruction)
     @Html.TextBoxFor(model => model.Instruction)
@@ -23,6 +23,6 @@
     @Html.Label("Select tag")
     @Html.DropDownList("TagId")
 
-    <input type="submit" value="Add new recipe" class="btn btn-default" />
+    <input type="submit" value="Add new recipe" class="fancyBtn" />
 }
-<p>@Html.ActionLink("Show all recipes", "Index")</p>
+<p class="fancyBtn">@Html.ActionLink("Show all recipes", "Index")</p>

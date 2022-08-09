@@ -2,11 +2,16 @@
   Layout = "_Layout";
 }
 
+<div class="container">
+  <div class="h-100 d-flex flex-column align-items-center"></div>
+    <h1 class="text-center my-4">Welcome Recipe Box!</h1>
+    <div class="d-flex flex-column align-items-center">
+      <p class="fancyBtn">@Html.ActionLink("See all recipes", "Index", "Recipes")</p>
+      <p class="fancyBtn">@Html.ActionLink("Add a Recipe", "Create", "Recipes")</p>
+      <p class="fancyBtn">@Html.ActionLink("Create an account", "Index", "Account")</p>
+      <!-- <p>@Html.ActionLink("See all tags", "Index", "Tags")</p>
+      <p>@Html.ActionLink("Create an account", "Index", "Account")</p> -->
+    </div>
+</div>
 
-<h1>Welcome Recipe Box!</h1>
-<h3>@Html.ActionLink("See all recipes", "Index", "Recipes")</h3>
-<p>@Html.ActionLink("Add a Recipe", "Create", "Recipes")</p>
-<p>@Html.ActionLink("Create an account", "Index", "Account")</p>
-<!-- <p>@Html.ActionLink("See all tags", "Index", "Tags")</p>
-<p>@Html.ActionLink("Create an account", "Index", "Account")</p> -->
 

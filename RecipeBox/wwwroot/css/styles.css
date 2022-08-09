@@ -23,7 +23,8 @@ div#header {
 }
 
 body {
-  /* background-image: url("/img/hair-tools-being-held-up-by 6 hands.jpg"); */
+  /* background-image: url("/img/ingredient-measuring-cups.jpg"); */
+  background-color: whitesmoke;
   font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
   color: rgb(23, 22, 22);
@@ -32,7 +33,7 @@ body {
 h1 {
   font-size: 48px;
   font-family: 'Fjalla One', sans-serif;
-  color: rgb(255, 159, 175);
+  color: rgb(90, 44, 44);
 }
 
 h2 {
@@ -44,23 +45,23 @@ h2 {
 h3 {
   font-size: 22px;
   font-family: 'Fjalla One', sans-serif;
-  color: rgb(247, 240, 255);
+  color: rgb(90, 44, 44);
 }
 
 a:link {
-  color:  rgb(251, 134, 154);
+  color:  rgb(90, 44, 44);
 }
 
 a:visited {
-  color:  rgb(251, 134, 154);
+  color:  rgb(90, 44, 44);
 }
 
 a:hover {
-  color:  rgb(255, 159, 175);
+  color:  rgb(90, 44, 44);
 }
 
 a:active{
-  color:  rgb(251, 134, 154);
+  color:  rgb(90, 44, 44);
 }
 
 .container {
@@ -82,7 +83,7 @@ a:active{
 }
 
 .fancyBtn {
-  background-color:  rgb(255, 159, 175);
+  background-color:  rgb(6, 46, 46);
   color: white;
   padding: 5px;
   border-radius: 1rem;

@@ -14,9 +14,9 @@
 
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
-
-    @Html.Label("Ingredients")
-    @Html.TextBoxFor(model => model.Ingredient)
+ 
+    @* @Html.Label("Ingredients")
+    @Html.TextBoxFor(model => model.Ingredient) *@
 
     @Html.LabelFor(model => model.Instruction)
     @Html.TextBoxFor(model => model.Instruction)
@@ -30,4 +30,4 @@
     <input type="submit" value="Save" />
 }
 
-<p>@Html.ActionLink("Back to list", "Index", "Recipes")</p>
+<p class="fancyBtn">@Html.ActionLink("Back to list", "Index", "Recipes")</p>

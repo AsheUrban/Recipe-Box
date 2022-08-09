@@ -8,16 +8,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
-
 namespace RecipeBox.Controllers
 {
-  [Authorize] //new line
+  [Authorize]
   public class RecipesController : Controller
   {
     private readonly RecipeBoxContext _db;
-    private readonly UserManager<ApplicationUser> _userManager; //new line
+    private readonly UserManager<ApplicationUser> _userManager; 
 
-    //updated constructor
     public RecipesController(UserManager<ApplicationUser> userManager, RecipeBoxContext db)
     {
       _userManager = userManager;
@@ -37,6 +35,7 @@ namespace RecipeBox.Controllers
       ViewBag.TagId = new SelectList(_db.Tags, "TagId", "Name");
       return View();
     }
+
     [HttpPost]
     public async Task<ActionResult> Create(Recipe recipe, int TagId, string Name)
     {
@@ -61,7 +60,7 @@ namespace RecipeBox.Controllers
           .FirstOrDefault(recipe => recipe.RecipeId == id);
       return View(thisRecipe);
     }
-
+    
     public ActionResult Edit(int id)
     {
       var thisRecipe = _db.Recipes.FirstOrDefault(recipe => recipe.RecipeId == id);
@@ -95,7 +94,5 @@ namespace RecipeBox.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    
-
   }
 }
