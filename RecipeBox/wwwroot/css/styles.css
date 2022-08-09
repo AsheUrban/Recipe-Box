@@ -23,8 +23,11 @@ div#header {
 }
 
 body {
-  /* background-image: url("/img/ingredient-measuring-cups.jpg"); */
-  background-color: whitesmoke;
+  background-image: url("/img/ingredient-measuring-cups.jpg");
+  background-repeat: no-repeat;
+  background-position: absolute;
+  background-size: cover;
+  /* background-color: whitesmoke; */
   font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
   color: rgb(23, 22, 22);
@@ -107,4 +110,3 @@ a:active{
 .fancyBtn a:active {
   color: white;
 }
-
