@@ -215,9 +215,6 @@ namespace RecipeBox.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Ingredient")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
                     b.Property<string>("Instruction")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -227,10 +224,15 @@ namespace RecipeBox.Migrations
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TagId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.HasKey("RecipeId");
+
+                    b.HasIndex("TagId");
 
                     b.HasIndex("UserId");
 
@@ -325,9 +327,15 @@ namespace RecipeBox.Migrations
 
             modelBuilder.Entity("RecipeBox.Models.Recipe", b =>
                 {
+                    b.HasOne("RecipeBox.Models.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId");
+
                     b.HasOne("RecipeBox.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Tag");
 
                     b.Navigation("User");
                 });

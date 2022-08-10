@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RecipeBox.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -172,10 +172,10 @@ namespace RecipeBox.Migrations
                 {
                     RecipeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     Rating = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     Instruction = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    Ingredient = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    TagId = table.Column<int>(type: "int", nullable: true),
                     UserId = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: true)
                 },
                 constraints: table =>
@@ -186,6 +186,12 @@ namespace RecipeBox.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Recipes_Tags_TagId",
+                        column: x => x.TagId,
+                        principalTable: "Tags",
+                        principalColumn: "TagId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -253,6 +259,11 @@ namespace RecipeBox.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Recipes_TagId",
+                table: "Recipes",
+                column: "TagId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Recipes_UserId",
                 table: "Recipes",
                 column: "UserId");
@@ -295,10 +306,10 @@ namespace RecipeBox.Migrations
                 name: "Recipes");
 
             migrationBuilder.DropTable(
-                name: "Tags");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Tags");
         }
     }
 }
